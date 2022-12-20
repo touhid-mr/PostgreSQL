@@ -1,3 +1,6 @@
+--https://www.postgresql.org/docs/current/sql-revoke.html
+--https://www.postgresql.org/docs/current/sql-grant.html
+
 ALTER SCHEMA ken   RENAME TO  tom;
 
 CREATE USER tom WITH PASSWORD 'Welcome2DG';
