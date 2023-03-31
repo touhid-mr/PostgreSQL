@@ -1,0 +1,12 @@
+ 
+ -- https://www.postgresql.org/docs/current/predefined-roles.html
+ 
+ SELECT
+r.rolname,
+ARRAY(SELECT b.rolname
+FROM pg_catalog.pg_auth_members m
+JOIN pg_catalog.pg_roles b ON (m.roleid = b.oid)
+WHERE m.member = r.oid) as memberof
+FROM pg_catalog.pg_roles r
+where rolname= 'prod_user1_ro'
+ORDER BY 1;
