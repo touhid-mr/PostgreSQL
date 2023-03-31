@@ -1,0 +1,6 @@
+-- List down table level privileges of user
+SELECT table_catalog, table_schema, table_name,grantee, privilege_type   
+FROM information_schema.table_privileges
+WHERE grantee = 'prod_user1_ro'
+order by table_name,grantee   desc;
+
